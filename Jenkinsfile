@@ -8,7 +8,9 @@ pipeline {
     }
     stages {
         stage('Initialize'){
-            env.PATH = "myDocker/bin:${env.PATH}"
+            steps {
+                env.PATH = "myDocker/bin:${env.PATH}"
+            }
         }
 
         stage('Build') {
