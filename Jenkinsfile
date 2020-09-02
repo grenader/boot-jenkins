@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'cloudbees/java-with-docker-client' }
+        any
     }
 
     triggers {
