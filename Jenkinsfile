@@ -1,17 +1,12 @@
 pipeline {
     agent {
-        docker { image 'openjdk:11.0' }
+        docker { image 'cloudbees/java-with-docker-client' }
     }
 
     triggers {
         pollSCM '* * * * *'
     }
     stages {
-        stage('Initialize'){
-            steps {
-                env.PATH = "myDocker/bin:${env.PATH}"
-            }
-        }
 
         stage('Build') {
             steps {
